@@ -19,7 +19,6 @@ local REFRESH_HOUR = 9 -- 9AM UTC / 4AM Eastern
 local REFRESH_MINUTE = 0
 local REFRESH_SECOND = 0
 
--- Add these constants near your other reset time variables
 local WEEKLY_REFRESH_HOUR = 9 -- 9AM UTC / 4AM Eastern
 local WEEKLY_REFRESH_MINUTE = 0
 local WEEKLY_REFRESH_SECOND = 0
@@ -97,7 +96,7 @@ function m.CalculateNextResetTime()
 	end
 end
 
--- Add this function to calculate weekly reset time
+-- This function calculates weekly reset time
 function m.CalculateWeeklyResetTime()
 	local currentTime = os.time()
 	local currentDate = os.date("!*t", currentTime)
@@ -306,7 +305,7 @@ function m.SyncPlayerWithServerQuests(player)
 	return anyRefresh
 end
 
--- Add this function to look up quest templates by ID
+-- This function looks up quest templates by ID
 function m.GetQuestTemplateById(questId)
 	-- Check daily quests
 	for _, template in ipairs(R_QuestConfigs.QUEST_POOL[R_QuestConfigs.TYPES.DAILY]) do
@@ -470,7 +469,7 @@ function m.Setup()
 		m.CompleteQuest(player, questId)
 	end)
 
-	-- Add this function to handle player joins
+	-- This function handles player joins
 	local function OnPlayerAdded(player)
 		-- Wait for the profile to load
 		local attempts = 0
