@@ -1,3 +1,5 @@
+-- Video example: https://streamable.com/o1jhpo
+
 local m = {}
 
 local Players = game:GetService("Players")
